@@ -28,11 +28,11 @@ function get_line(filename) {
 	}
 
     //Writes random line to console
-	console.log(line);
+	//console.log(line);
 
     //Posts random line to twitter
-	/*twit.post('statuses/update', { status: line }, function(err, reply) {
-	})*/
+	twit.post('statuses/update', { status: line }, function(err, reply) {
+	})
 
     //Logs random line in log file
     var now = new Date();
@@ -45,11 +45,3 @@ function get_line(filename) {
 }
 
 get_line(questions);
-
-/* 
-
-TODO: Search log file before posting tweet
-TODO: Use 'attempt' to re-run function if tweet found in log file or if tweet is too long - https://www.npmjs.org/package/attempt
-TODO: Clear log file every week
-
-*/
